@@ -36,7 +36,7 @@ copy /b ht2-vpu-ubuntu2204-xfce-v1.0.img.gz.part-a + ht2-vpu-ubuntu2204-xfce-v1.
 
 ## 刷机
 
-**RKDevTool 线刷**（推荐）：HT2 断电 → 按住复位孔插 USB 线连电脑 → RKDevTool 识别 LOADER 设备 → "升级固件"页选 `.img` → 升级，完成后自动重启。
+**RKDevTool 线刷**：HT2 断电 → 按住复位孔插 USB 线连电脑 → RKDevTool 识别 LOADER 设备 → "下载镜像"页勾选"按地址写" → 添加一项（名称随意，如 `system`），地址填 `0x0`，选解压出的 `.img` → 执行。镜像自带完整引导链（分区表/IDB/u-boot 全在里面），**无需再单独烧 Loader**，完成后设备自动重启。
 
 **Linux dd**：`gunzip -c xxx.img.gz | sudo dd of=/dev/sdX bs=4M conv=fsync`
 
